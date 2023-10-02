@@ -42,6 +42,7 @@ export class UndoManager extends Observable<"stack-item-added" | "stack-item-pop
      * @type {Array<AbstractType<any>>}
      */
     scope: Array<AbstractType<any>>;
+    doc: Doc;
     deleteFilter: (arg0: Item) => boolean;
     trackedOrigins: Set<any>;
     captureTransaction: (arg0: Transaction) => boolean;
@@ -60,7 +61,6 @@ export class UndoManager extends Observable<"stack-item-added" | "stack-item-pop
      */
     undoing: boolean;
     redoing: boolean;
-    doc: Doc;
     lastChange: number;
     ignoreRemoteMapChanges: boolean;
     captureTimeout: number;
@@ -153,7 +153,7 @@ export type UndoManagerOptions = {
 import { DeleteSet } from "./DeleteSet.js";
 import { Observable } from "lib0/observable";
 import { AbstractType } from "../types/AbstractType.js";
+import { Doc } from "./Doc.js";
 import { Item } from "../structs/Item.js";
 import { Transaction } from "./Transaction.js";
-import { Doc } from "./Doc.js";
 //# sourceMappingURL=UndoManager.d.ts.map
