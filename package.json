@@ -4,7 +4,7 @@
   "private": true,
   "description": "demo-server for Ogma collaboration example",
   "scripts": {
-    "start": "export PRODUCTION=1; node ./index.js"
+    "start": "node ./index.js"
   },
   "author": "Kevin Jahns <kevin.jahns@protonmail.com",
   "license": "MIT",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "node-static": "^0.7.11",
-    "serve": "^11.3.1",
+    "serve": "^14.2.1",
     "standard": "^12.0.1",
     "ws": "^7.5.9",
     "y-protocols": "^1.0.2",
