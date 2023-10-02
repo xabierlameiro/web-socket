@@ -1,12 +1,12 @@
 {
-  "name": "ogma-yjs-demo-server",
+  "name": "websoket-demo-server",
   "version": "0.0.1",
   "private": true,
-  "description": "demo-server for Ogma collaboration example",
+  "description": "Web socket server",
   "scripts": {
     "start": "export PRODUCTION=1; node ./index.js"
   },
-  "author": "Kevin Jahns <kevin.jahns@protonmail.com",
+  "author": "Xabier Lameiro <xabier.lameiro@gmail.com",
   "license": "MIT",
   "standard": {
     "ignore": [
