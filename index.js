@@ -17,13 +17,27 @@ const staticServer = new StaticServer("../", {
 const server = http.createServer((request, response) => {
   request
     .addListener("end", () => {
+      console.log(`Serving ${request.url}`);
       staticServer.serve(request, response);
     })
     .resume();
 });
 const wss = new WebSocket.Server({ server });
 
-wss.on("connection", (conn, req) => setupWSConnection(conn, req, {}));
+wss.on("connection", (conn, req) => {
+  const room = req.url.slice(1);
+  console.log(`New connection to ${room}`);
+  setupWSConnection(conn, room);
+  conn.on("close", () => console.log(`Closed connection to ${room}`));
+
+  conn.on("message", (message) => {
+    console.log(`Message from ${room}: ${message}`);
+  });
+
+  conn.on("error", (error) => {
+    console.log(`Error in ${room}: ${error}`);
+  });
+});
 
 server.listen(port);
 
