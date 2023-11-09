@@ -23,7 +23,11 @@ const server = http.createServer((request, response) => {
 });
 const wss = new WebSocket.Server({ server });
 
-wss.on("connection", (conn, req) => setupWSConnection(conn, req, {}));
+wss.on("connection", (conn, req) => {
+  console.log(`conn: ${conn}`);
+  console.log(`req: ${req}`);
+  return setupWSConnection(conn, req, {});
+});
 
 server.listen(port);
 
