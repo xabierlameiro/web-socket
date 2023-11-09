@@ -25,10 +25,10 @@ const server = http.createServer((request, response) => {
 const wss = new WebSocket.Server({ server });
 
 wss.on("connection", (conn, req) => {
-  const room = req.url.slice(1);
-  console.log(`New connection to ${room}`);
-  setupWSConnection(conn, room);
-  conn.on("close", () => console.log(`Closed connection to ${room}`));
+  console.log(`request: ${req}`);
+  console.log(`New connection to ${conn}`);
+  setupWSConnection(conn, req, {})
+  conn.on("close", () => console.log(`Closed connection`));
 
   conn.on("message", (message) => {
     console.log(`Message from ${room}: ${message}`);
