@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "node-static": "^0.7.11",
-    "serve": "^11.3.1",
+    "serve": "^14.2.6",
     "standard": "^12.0.1",
     "ws": "^7.4.2",
     "y-protocols": "^1.0.2",
